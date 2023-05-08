@@ -18,7 +18,7 @@ public class UploadedFile {
     private LocalDateTime createdAt;
 
     private String name;
-
+    @Column(columnDefinition = "TEXT")
     private String fileUrl;
 
     private String fileType;

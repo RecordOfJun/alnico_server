@@ -4,6 +4,7 @@ import com.alnico.alnico_server.api_server.domain.UploadedFile;
 import com.alnico.alnico_server.api_server.service.HistoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class HistoryApi {
     }
 
     @PostMapping("api/history")
-    public void saveCertification(@RequestParam("name") String name,@RequestParam("fileUrl") String fileUrl){
-        historyService.post(name,fileUrl);
+    public void saveCertification(@RequestParam("name") String name,@RequestParam("file") MultipartFile file) throws Exception{
+        historyService.post(name,file);
     }
 }
